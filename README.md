@@ -1,13 +1,13 @@
 # Behavior App Client
 
-## Back-end Repository:
+### Back-end Repository:
 - https://github.com/hilarybrown/behavior-api
 
-## Back-end Deployed Heroku site:
+### Back-end Deployed Heroku site:
 - https://enigmatic-coast-17636.herokuapp.com/
 
-## Front-end Respository:
+### Front-end Respository:
 -
 
-## Front-end Deployed Client Application:
+### Front-end Deployed Client Application:
 -
