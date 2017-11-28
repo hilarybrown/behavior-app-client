@@ -22,6 +22,7 @@ const signInSuccess = function (data) {
   $('#signInModal').modal('hide')
   $('#sign-in-container').hide()
   $('#pwUpdateContainer').show()
+  $('#newChartContainer').show()
   $('#sign-out').show()
   $('#newMovieContainer').show()
   $('#sign-in')[0].reset()

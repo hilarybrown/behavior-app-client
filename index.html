@@ -164,6 +164,131 @@
   </div>
   <!-- End sign up and sign in container -->
 
+
+
+
+  <!-- Begin New Chart form container -->
+    <div class="new-chart-container" id=newChartContainer style="display: none">
+  <!-- New Chart Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-chart-modal">Create Today's Chart</button>
+
+  <!-- New Chart Modal -->
+  <div class="modal fade" id="new-chart-modal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title auth-btn" id="signUpModalLabel">Today's Daily Behavior Chart</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+        </div>
+        <div class="modal-body">
+          <form id="new-chart">
+            <div class="form-group" id="childName">
+              <label>Child's Name</label>
+              <input name="daily_chart[kid]" type="text" class="form-control" placeholder="First Name only" required>
+            </div>
+            <div class="form-group" id="dob">
+              <label>Date of Birth</label>
+              <input name="daily_chart[date_of_birth]" type="text" class="form-control" placeholder="MM/DD/YYYY" required>
+            </div>
+            <div class="form-group" id="strengths">
+              <label>Child's Strengths</label>
+              <input name="daily_chart[strengths]" type="text" class="form-control" placeholder="Child's Strengths" required>
+            </div>
+            Check off all tasks that your child has already completed today, and click Save. You can edit the chart as the day goes on.
+            <div class="form-check task-checks">
+              <br/>
+              <label class="form-check-label">
+                <input name="daily_chart[teeth_am]" type="checkbox" class="form-check-input">
+                Brushed teeth in the morning
+              </label>
+            </div>
+            <div class="form-check task-checks">
+              <label class="form-check-label">
+                <input name="daily_chart[bfast_dishes]" type="checkbox" class="form-check-input">
+                Cleared breakfast dishes from the table
+              </label>
+            </div>
+            <div class="form-check task-checks">
+              <label class="form-check-label">
+                <input name="daily_chart[made_bed]" type="checkbox" class="form-check-input">
+                Made the bed
+              </label>
+            </div>
+            <div class="form-check task-checks">
+              <label class="form-check-label">
+                <input name="daily_chart[dressed]" type="checkbox" class="form-check-input">
+                Got dressed without assistance
+              </label>
+            </div>
+            <div class="form-check task-checks">
+              <label class="form-check-label">
+                <input name="daily_chart[drop_off]" type="checkbox" class="form-check-input">
+                Successful school drop-off (no crying)
+              </label>
+            </div>
+            <div class="form-check task-checks">
+              <label class="form-check-label">
+                <input name="daily_chart[no_fighting]" type="checkbox" class="form-check-input">
+                Did not fight with sibling(s)
+              </label>
+            </div>
+            <div class="form-check task-checks">
+              <label class="form-check-label">
+                <input name="daily_chart[ate_dinner]" type="checkbox" class="form-check-input">
+                Ate dinner without complaining
+              </label>
+            </div>
+            <div class="form-check task-checks">
+              <label class="form-check-label">
+                <input name="daily_chart[dinner_dishes]" type="checkbox" class="form-check-input">
+                Cleared dinner dishes from the table
+              </label>
+            </div>
+            <div class="form-check task-checks">
+              <label class="form-check-label">
+                <input name="daily_chart[pjs]" type="checkbox" class="form-check-input">
+                Dressed for bed without assistance
+              </label>
+            </div>
+            <div class="form-check task-checks">
+              <label class="form-check-label">
+                <input name="daily_chart[teeth_pm]" type="checkbox" class="form-check-input">
+                Brushed teeth in the evening
+              </label>
+            </div>
+            <div class="form-check task-checks">
+              <label class="form-check-label">
+                <input name="daily_chart[bed_success]" type="checkbox" class="form-check-input">
+                Went to bed without a struggle
+              </label>
+            </div>
+            <div class="form-group" id="tv-mins">
+              <label>Comments:</label>
+              <textarea name="daily_chart[comments]" type="textarea" class="form-control" placeholder="Any notable comments from today? Achievements or struggles?"></textarea>
+            </div>
+            <div class="modal-footer">
+              <p>
+                <input type="submit" class="btn btn-primary" name="submit" value="Save">
+                <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
+              </p>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End New Chart form -->
+
+
+<!-- Charts Display area -->
+  <div class="charts-table" id="showAllCharts"></div>
+<!-- <div id="editChart"></div> -->
+
+
 </body>
 
 </html>
