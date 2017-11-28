@@ -71,6 +71,17 @@ const removeChartFailure = function (data) {
   $('#appMessage').text('Error on delete. Please try again.')
 }
 
+const updateChartSuccess = function (data) {
+  $('#editChartModal').modal('hide')
+  $('#appMessage').show()
+  $('#appMessage').text('Your chart has been updated.')
+}
+
+const updateChartFailure = function (data) {
+  $('#appMessage').show()
+  $('#appMessage').text('Error saving your update.')
+}
+
 module.exports = {
   getChartsSuccess,
   getChartsFailure,
@@ -81,7 +92,7 @@ module.exports = {
   removeChartSuccess,
   removeChartFailure,
   createChartRefreshSuccess,
-  removeChartRefreshSuccess
-  // updateChartSuccess,
-  // updateChartFailure
+  removeChartRefreshSuccess,
+  updateChartSuccess,
+  updateChartFailure
 }

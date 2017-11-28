@@ -44,10 +44,21 @@ const removeChart = function (data) {
   })
 }
 
+const updateChart = function (chartId, data) {
+  return $.ajax({
+    url: config.apiOrigin + '/daily_charts/' + chartId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   getCharts,
   showChart,
   createChart,
-  removeChart
-  // updateChart
+  removeChart,
+  updateChart
 }

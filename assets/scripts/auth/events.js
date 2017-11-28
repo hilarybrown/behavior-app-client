@@ -2,6 +2,9 @@
 const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
+const chartApi = require('../chart/api')
+const chartUi = require('../chart/ui')
+// const chartEvents = require('../chart/events.js')
 
 const onSignUp = function (event) {
   const data = getFormFields(this)
@@ -16,7 +19,14 @@ const onSignIn = function (event) {
   event.preventDefault()
   api.signIn(data)
     .then(ui.signInSuccess)
+    .then(onSignInIndex)
     .catch(ui.signInFailure)
+}
+
+const onSignInIndex = function (event) {
+  chartApi.getCharts()
+    .then(ui.signInIndexSuccess)
+    .catch(chartUi.createChartFailure)
 }
 
 const onChangePassword = function (event) {

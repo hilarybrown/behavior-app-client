@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const showChartsTemplate = require('../templates/index-charts.handlebars')
 
 // store user's data upon successful sign up
 const signUpSuccess = function (data) {
@@ -18,7 +19,6 @@ const signUpFailure = function (data) {
 
 // show success message
 const signInSuccess = function (data) {
-  $('#getMoviesButton').show()
   $('#signInModal').modal('hide')
   $('#sign-in-container').hide()
   $('#getChartsButton').show()
@@ -30,6 +30,14 @@ const signInSuccess = function (data) {
   $('#authMessage').show()
   $('#authMessage').text('Welcome!')
   store.user = data.user
+}
+
+const signInIndexSuccess = function (data) {
+  const showChartsHtml = showChartsTemplate({ daily_charts: data.daily_charts })
+  $('#authMessage').hide()
+  $('#showAllCharts').show()
+  $('#showAllCharts').html('')
+  $('#showAllCharts').html(showChartsHtml)
 }
 
 const signInFailure = function (data) {
@@ -48,14 +56,13 @@ const changePasswordFailure = function (data) {
 
 const signOutSuccess = function (data) {
   $('#appMessage').hide()
+  $('#showAllCharts').hide()
+  $('#newChartContainer').hide()
   $('#sign-in-container').show()
-  $('#getMoviesButton').hide()
-  $('#showAllMovies').hide()
   $('#pwUpdateContainer').hide()
   $('#sign-out').hide()
   $('#sign-in').show()
   $('#change-password').show()
-  $('#newMovieContainer').hide()
   $('#authMessage').show()
   $('#authMessage').text('Come back again soon!')
   store.user = null
@@ -74,5 +81,6 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  signInIndexSuccess
 }
