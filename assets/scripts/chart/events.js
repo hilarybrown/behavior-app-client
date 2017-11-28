@@ -23,9 +23,10 @@ const onGetCharts = function (event) {
   event.preventDefault()
   api.getCharts()
     // .then((charts) => {
-    //   $(document).on('submit', '#edit-chart', onUpdateChart)
+    //   $(document).on('submit', '#update-chart', onUpdateChart)
     //   return charts
     // })
+    // .then(console.log('is this working?'))
     .then(ui.getChartsSuccess)
     .catch(ui.getChartsFailure)
 }
@@ -36,8 +37,11 @@ const onShowChart = function (event) {
   // const chartId = event.target.attributes['data-id'].value
   const chartId = $(event.target).attr('data-id')
   // const chartId = $(event.target).parent().attributes['data-id'].value
-  console.log('chartId is', chartId)
   api.showChart(chartId)
+    .then((charts) => {
+      $(document).on('submit', '#update-chart', onUpdateChart)
+      return charts
+    })
     .then(ui.showChartSuccess)
     .catch(ui.showChartFailure)
 }
@@ -58,17 +62,29 @@ const onRemoveChartRefresh = function (event) {
     .catch(ui.removeChartFailure)
 }
 
+const onUpdateChart = function (event) {
+  event.preventDefault()
+  const chartId = $(event.target).attr('data-id')
+  console.log('chartId is', chartId)
+  // const data = getFormFields(event.target)
+  // const chartId = $(event.target).attr('data-id')
+  // api.updateChart(chartId, data)
+  //   .then(ui.updateChartSuccess)
+  //   .catch(ui.updateChartFailure)
+}
+
 const addHandlers = () => {
   $('#getChartsButton').on('submit', onGetCharts)
   $('#new-chart').on('submit', onCreateChart)
   $('#showAllCharts').on('click', '.show-chart', onShowChart)
   $('#showAllCharts').on('click', '.remove', onRemoveChart)
+  $('#update-chart').on('click', 'button[data-update]', onUpdateChart)
 }
 
 module.exports = {
   addHandlers,
   onGetCharts,
   onCreateChart,
-  onRemoveChart
-  // onUpdateChart
+  onRemoveChart,
+  onUpdateChart
 }

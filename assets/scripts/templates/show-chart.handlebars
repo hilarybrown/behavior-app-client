@@ -7,28 +7,83 @@
 </div>
 
 <div class="modal-body">
-  <div class="row">
+  <form id="update-chart">
+  <div class="row form-group" id="dob">
     <div class="col-xs-12">
-      <h3>Date of Birth: {{daily_chart.date_of_birth}}</h3>
+      <label>Date of Birth</label>
+      <input name="daily_chart[date_of_birth]" type="text" class="form-control" placeholder="MM/DD/YYYY" value="{{daily_chart.date_of_birth}}" required>
+    </div>
+  </div>
+  <div class="row form-group" id="strengths">
+    <div class="col-xs-12">
+      <label>Strengths</label>
+      <input name="daily_chart[strengths]" type="text" class="form-control" placeholder="Strengths" value="{{daily_chart.strengths}}" required>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <h3>Strengths: {{daily_chart.strengths}}</h3>
+      <h5>Brushed teeth in the morning</h5><input name="daily_chart[teeth_am]" type="checkbox" class="form-check-input" value="{{daily_chart.teeth_am}}">
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <h5>Brushed teeth in the morning {{daily_chart.teeth_am}}</h5>
+      <h5>Cleared breakfast dishes from the table</h5><input name="daily_chart[bfast_dishes]" type="checkbox" class="form-check-input" value="{{daily_chart.bfast_dishes}}">
+    </div>
+    </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h5>Made the bed</h5><input name="daily_chart[made_bed]" type="checkbox" class="form-check-input" value="{{daily_chart.made_bed}}">
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <h5>Cleared breakfast dishes from the table {{daily_chart.bfast_dishes}}</h5>
+      <h5>Got dressed without assistance</h5><input name="daily_chart[dressed]" type="checkbox" class="form-check-input" value="{{daily_chart.dressed}}">
     </div>
   </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h5>Successful school drop-off (no crying)</h5><input name="daily_chart[drop_off]" type="checkbox" class="form-check-input" value="{{daily_chart.drop_off}}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h5>Did not fight with sibling(s)</h5><input name="daily_chart[no_fighting]" type="checkbox" class="form-check-input" value="{{daily_chart.no_fighting}}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h5>Ate dinner without complaining</h5><input name="daily_chart[ate_dinner]" type="checkbox" class="form-check-input" value="{{daily_chart.ate_dinner}}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h5>Cleared dinner dishes from the table</h5><input name="daily_chart[dinner_dishes]" type="checkbox" class="form-check-input" value="{{daily_chart.dinner_dishes}}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h5>Dressed for bed without assistance</h5><input name="daily_chart[pjs]" type="checkbox" class="form-check-input" value="{{daily_chart.pjs}}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h5>Brushed teeth in the evening</h5><input name="daily_chart[teeth_pm]" type="checkbox" class="form-check-input" value="{{daily_chart.teeth_pm}}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h5>Went to bed without a struggle</h5><input name="daily_chart[bed_success]" type="checkbox" class="form-check-input" value="{{daily_chart.bed_success}}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h5>Comments</h5><textarea name="daily_chart[comments]" type="textarea" class="form-control" placeholder="Any notable comments from today? Achievements or struggles?" value="{{daily_chart.comments}}"></textarea>
+    </div>
+  </div>
+</form>
 </div>
 
 <div class="modal-footer">
+  <button class="btn btn-primary" data-update="{{daily_chart.id}}">Save Update</button>
   <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
 </div>
