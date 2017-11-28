@@ -24,10 +24,30 @@ const getCharts = function () {
   })
 }
 
+const showChart = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/daily_charts/' + data,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const removeChart = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/daily_charts/' + data,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   getCharts,
-  // showChart,
-  createChart
-  // removeChart,
+  showChart,
+  createChart,
+  removeChart
   // updateChart
 }
