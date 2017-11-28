@@ -6,7 +6,7 @@ const store = require('../store')
 const signUpSuccess = function (data) {
   store.user = data.user
   $('#signUpModal').modal('hide')
-  $('#signUpModal').hide()
+  // $('#signUpModal').hide()
   $('#sign-up')[0].reset()
   $('#authMessage').show()
   $('#authMessage').text('Congrats! You are now signed up. Please now SIGN IN with your new credentials to access your movies.')
@@ -21,6 +21,7 @@ const signInSuccess = function (data) {
   $('#getMoviesButton').show()
   $('#signInModal').modal('hide')
   $('#sign-in-container').hide()
+  $('#getChartsButton').show()
   $('#pwUpdateContainer').show()
   $('#newChartContainer').show()
   $('#sign-out').show()

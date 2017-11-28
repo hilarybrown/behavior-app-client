@@ -24,7 +24,7 @@ const onGetCharts = function (event) {
 }
 
 const addHandlers = () => {
-  // $('#getChartsButton').on('submit', onGetCharts)
+  $('#getChartsButton').on('submit', onGetCharts)
   $('#new-chart').on('submit', onCreateChart)
   // $('#showAllCharts').on('click', '.remove', onRemoveChart)
 }
