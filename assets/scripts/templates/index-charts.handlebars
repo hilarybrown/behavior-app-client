@@ -1,0 +1,44 @@
+{{#if daily_charts}}
+  <div class="jumbotron">
+    <h1>bee.have</h1>
+    <p>bee.have is the new behavior app for your little beehive. Track daily chores, tasks, behavior, and priviledges all in one simple app to keep your family organized and on-track while on-the-go.</p>
+  </div>
+  <div class="container-fluid">
+    {{#each daily_charts as |daily_chart|}}
+
+      <div class="col-xs-12 col-sm-4 well index-box">
+        <div class="row">
+          <div class="col-xs-1"></div>
+          <div class="col-xs-10">
+            <h3 class="chart-date">Chart from: {{daily_chart.createdAt}}</h3>
+          </div>
+          <div class="col-xs-1"></div>
+        </div>
+        <div class="row">
+          <div class="col-xs-1"></div>
+          <div class="col-xs-10">
+            <h3 class="kid-name">Child: {{daily_chart.kid}}</h3>
+          </div>
+          <div class="col-xs-1"></div>
+        </div>
+        <div class="row">
+          <div class="col-xs-1"></div>
+          <div class="col-xs-10">
+            <h3 class="chart-comments">Comments from this day: {{daily_chart.comments}}</h3>
+          </div>
+          <div class="col-xs-1"></div>
+        </div>
+        <br/>
+        <div class="row">
+          <div class="col-xs-7"></div>
+          <div class="col-xs-5">
+            <button class="btn btn-default show-chart" type="button" data-id="{{daily_chart.id}}">View</button>
+            <button class="btn btn-default remove" type="button" data-id="{{daily_chart.id}}">Delete</button>
+        </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+{{else}}
+  <h4> Failed to load your charts, please try again later</h4>
+{{/if}}
