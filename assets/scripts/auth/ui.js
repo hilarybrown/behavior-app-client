@@ -20,8 +20,8 @@ const signUpFailure = function (data) {
 // show success message
 const signInSuccess = function (data) {
   $('#signInModal').modal('hide')
+  $('#initial-heading').hide()
   $('#sign-in-container').hide()
-  $('#getChartsButton').show()
   $('#pwUpdateContainer').show()
   $('#newChartContainer').show()
   $('#sign-out').show()

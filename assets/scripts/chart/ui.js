@@ -1,6 +1,7 @@
 'use strict'
 
 const showChartsTemplate = require('../templates/index-charts.handlebars')
+const showChartTemplate = require('../templates/show-chart.handlebars')
 const store = require('../store')
 const handlebars = require('../handlebars.js')
 
@@ -41,8 +42,15 @@ const getChartsFailure = function (data) {
   $('#appMessage').text('Error bringing back your behavior charts.')
 }
 
+const showChartView = function (data) {
+  $('#chart-view').empty()
+  $('#chart-view').append(data)
+}
+
 const showChartSuccess = function (response, status, xhr) {
   handlebars.showChartSmall(response.daily_chart)
+  $('#chart-view').empty()
+  $('#chart-view').append(handlebars.showChartSmall(response.daily_chart))
   $('#chart-view-modal').modal('show')
 }
 
@@ -106,5 +114,6 @@ module.exports = {
   removeChartRefreshSuccess,
   updateChartSuccess,
   updateChartFailure,
-  updateChartRefreshSuccess
+  updateChartRefreshSuccess,
+  showChartView
 }
