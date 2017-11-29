@@ -17,7 +17,20 @@
 <body class="container-fluid">
   <div id="content">
 
-  <!-- Begin Password Update form container -->
+        <!-- Container for all Messages shown to user -->
+        <div class="messageContainer">
+          <!-- Begin Signed In as... container -->
+          <div id="currentUserMessage"></div>
+
+          <!-- user message container -->
+          <div class="message" id="appMessage"></div>
+
+          <!-- Auth User Message -->
+          <div class="message" id="authMessage"></div>
+        </div>
+        <!-- End messages container -->
+
+    <!-- Begin Password Update form container -->
     <div class="password-update-container" id=pwUpdateContainer style="display: none">
       <!-- Password Update Button trigger modal -->
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#passwordUpdateModal">
@@ -37,17 +50,17 @@
             <div class="modal-body">
               <form id="change-password">
                 <div class="form-group">
-                    <label for="oldPwLabel">Old Password</label>
-                    <input name="passwords[old]" type="password" class="form-control" placeholder="Old Password">
-                  </div>
-                  <div class="form-group">
-                    <label for="newPwLabel">New Password</label>
-                    <input name="passwords[new]" type="password" class="form-control" placeholder="New Password">
-                  </div>
-                    <div class="modal-footer">
-                    <input type="submit" class="btn btn-primary" name="submit" value="Change Password">
-                    <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
-                  </div>
+                  <label for="oldPwLabel">Old Password</label>
+                  <input name="passwords[old]" type="password" class="form-control" placeholder="Old Password">
+                </div>
+                <div class="form-group">
+                  <label for="newPwLabel">New Password</label>
+                  <input name="passwords[new]" type="password" class="form-control" placeholder="New Password">
+                </div>
+                <div class="modal-footer">
+                  <input type="submit" class="btn btn-primary" name="submit" value="Change Password">
+                  <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
+                </div>
               </form>
             </div>
           </div>
@@ -65,248 +78,228 @@
     </form>
     <!-- End Sign Out Container -->
 
+    <div id="initial-heading">
+      <a href="https://imgur.com/Jn8Ep1o"><img src="https://i.imgur.com/Jn8Ep1os.jpg" title="source: imgur.com" /></a>
+      <h1>bee.have</h1>
 
-  <a href="https://imgur.com/Jn8Ep1o"><img src="https://i.imgur.com/Jn8Ep1os.jpg" title="source: imgur.com" /></a>
-  <h1>bee.have</h1>
-
-  <p>bee.have is the new behavior app for your little beehive. Track daily chores, tasks, behavior, and priviledges all in one simple app to keep your family organized and on-track while on-the-go.</p>
-
-
-  <!-- Container for all Messages shown to user -->
-  <div class="messageContainer">
-    <!-- Begin Signed In as... container -->
-    <div id="currentUserMessage"></div>
-
-    <!-- user message container -->
-    <div class="message" id="appMessage"></div>
-
-    <!-- Auth User Message -->
-    <div class="message" id="authMessage"></div>
-  </div>
-  <!-- End messages container -->
-
-
-  <!-- Begin Sign up and Sign in Container -->
-  <div class="auth-container" id="sign-in-container">
-    <!-- Sign Up Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
-
-    <!-- Sign Up Modal -->
-    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title auth-btn" id="signUpModalLabel">Sign Up</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-          </div>
-          <div class="modal-body">
-            <form id="sign-up">
-              <div class="form-group">
-                <label for="emailLabel">Email address</label>
-                <input name="credentials[email]" type="email" class="form-control" placeholder="Enter email">
-              </div>
-              <div class="form-group">
-                <label for="passwordLabel">Password</label>
-                <input name="credentials[password]" type="password" class="form-control" placeholder="Password" required>
-              </div>
-              <div class="form-group" data-newuser>
-                <label for="passwordLabel">Confirm Password</label>
-                <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="Password Confirmation">
-              </div>
-              <div class="modal-footer">
-                <p>
-                  <input type="submit" class="btn btn-primary" name="submit" value="Sign Up">
-                  <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
-                </p>
-              </div>
-            </form>
-          </div>
-
-        </div>
-      </div>
+      <p>bee.have is the new behavior app for your little beehive. Track daily chores, tasks, behavior, and priviledges all in one simple app to keep your family organized and on-track while on-the-go.</p>
     </div>
 
-    <!-- Sign In Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">
+
+
+    <!-- Begin Sign up and Sign in Container -->
+    <div class="auth-container" id="sign-in-container">
+      <!-- Sign Up Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+
+      <!-- Sign Up Modal -->
+      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title auth-btn" id="signUpModalLabel">Sign Up</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <div class="modal-body">
+              <form id="sign-up">
+                <div class="form-group">
+                  <label for="emailLabel">Email address</label>
+                  <input name="credentials[email]" type="email" class="form-control" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="passwordLabel">Password</label>
+                  <input name="credentials[password]" type="password" class="form-control" placeholder="Password" required>
+                </div>
+                <div class="form-group" data-newuser>
+                  <label for="passwordLabel">Confirm Password</label>
+                  <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="Password Confirmation">
+                </div>
+                <div class="modal-footer">
+                  <p>
+                    <input type="submit" class="btn btn-primary" name="submit" value="Sign Up">
+                    <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
+                  </p>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Sign In Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">
               Sign In
             </button>
 
-    <!-- Sign In Modal -->
-    <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title auth-btn" id="signInModalLabel">Sign In</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <!-- Sign In Modal -->
+      <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title auth-btn" id="signInModalLabel">Sign In</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
-          </div>
-          <div class="modal-body">
-            <form id="sign-in">
-              <div class="form-group">
-                <label for="emailLabel">Email address</label>
-                <input name="credentials[email]" type="email" class="form-control" placeholder="Enter email">
-              </div>
-              <div class="form-group">
-                <label for="passwordLabel">Password</label>
-                <input name="credentials[password]" type="password" class="form-control" placeholder="Password" required>
-              </div>
-              <div class="modal-footer">
-                <input type="submit" class="btn btn-primary" name="submit" value="Sign In">
-                <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
-              </div>
-            </form>
+            </div>
+            <div class="modal-body">
+              <form id="sign-in">
+                <div class="form-group">
+                  <label for="emailLabel">Email address</label>
+                  <input name="credentials[email]" type="email" class="form-control" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="passwordLabel">Password</label>
+                  <input name="credentials[password]" type="password" class="form-control" placeholder="Password" required>
+                </div>
+                <div class="modal-footer">
+                  <input type="submit" class="btn btn-primary" name="submit" value="Sign In">
+                  <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- End sign up and sign in container -->
+    <!-- End sign up and sign in container -->
 
 
 
 
-  <!-- Begin New Chart form container -->
+    <!-- Begin New Chart form container -->
     <div class="new-chart-container" id=newChartContainer style="display: none">
-  <!-- New Chart Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-chart-modal">Create Today's Chart</button>
+      <!-- New Chart Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-chart-modal">Create Today's Chart</button>
 
-  <!-- New Chart Modal -->
-  <div class="modal fade" id="new-chart-modal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title auth-btn" id="signUpModalLabel">Today's Daily Behavior Chart</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <!-- New Chart Modal -->
+      <div class="modal fade" id="new-chart-modal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title auth-btn" id="signUpModalLabel">Today's Daily Behavior Chart</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
-        </div>
-        <div class="modal-body">
-          <form id="new-chart">
-            <div class="form-group" id="childName">
-              <label>Child's Name</label>
-              <input name="daily_chart[kid]" type="text" class="form-control" placeholder="First Name only" required>
             </div>
-            <div class="form-group" id="dob">
-              <label>Date of Birth</label>
-              <input name="daily_chart[date_of_birth]" type="text" class="form-control" placeholder="MM/DD/YYYY" required>
-            </div>
-            <div class="form-group" id="strengths">
-              <label>Child's Strengths</label>
-              <input name="daily_chart[strengths]" type="text" class="form-control" placeholder="Child's Strengths" required>
-            </div>
-            Check off all tasks that your child has already completed today, and click Save. You can edit the chart as the day goes on.
-            <div class="form-check task-checks">
-              <br/>
-              <label class="form-check-label">
+            <div class="modal-body">
+              <form id="new-chart">
+                <div class="form-group" id="childName">
+                  <label>Child's Name</label>
+                  <input name="daily_chart[kid]" type="text" class="form-control" placeholder="First Name only" required>
+                </div>
+                <div class="form-group" id="dob">
+                  <label>Date of Birth</label>
+                  <input name="daily_chart[date_of_birth]" type="text" class="form-control" placeholder="MM/DD/YYYY" required>
+                </div>
+                <div class="form-group" id="strengths">
+                  <label>Child's Strengths</label>
+                  <input name="daily_chart[strengths]" type="text" class="form-control" placeholder="Child's Strengths" required>
+                </div>
+                Check off all tasks that your child has already completed today, and click Save. You can edit the chart as the day goes on.
+                <div class="form-check task-checks">
+                  <br/>
+                  <label class="form-check-label">
                 <input name="daily_chart[teeth_am]" type="checkbox" class="form-check-input">
                 Brushed teeth in the morning
               </label>
-            </div>
-            <div class="form-check task-checks">
-              <label class="form-check-label">
+                </div>
+                <div class="form-check task-checks">
+                  <label class="form-check-label">
                 <input name="daily_chart[bfast_dishes]" type="checkbox" class="form-check-input">
                 Cleared breakfast dishes from the table
               </label>
-            </div>
-            <div class="form-check task-checks">
-              <label class="form-check-label">
+                </div>
+                <div class="form-check task-checks">
+                  <label class="form-check-label">
                 <input name="daily_chart[made_bed]" type="checkbox" class="form-check-input">
                 Made the bed
               </label>
-            </div>
-            <div class="form-check task-checks">
-              <label class="form-check-label">
+                </div>
+                <div class="form-check task-checks">
+                  <label class="form-check-label">
                 <input name="daily_chart[dressed]" type="checkbox" class="form-check-input">
                 Got dressed without assistance
               </label>
-            </div>
-            <div class="form-check task-checks">
-              <label class="form-check-label">
+                </div>
+                <div class="form-check task-checks">
+                  <label class="form-check-label">
                 <input name="daily_chart[drop_off]" type="checkbox" class="form-check-input">
                 Successful school drop-off (no crying)
               </label>
-            </div>
-            <div class="form-check task-checks">
-              <label class="form-check-label">
+                </div>
+                <div class="form-check task-checks">
+                  <label class="form-check-label">
                 <input name="daily_chart[no_fighting]" type="checkbox" class="form-check-input">
                 Did not fight with sibling(s)
               </label>
-            </div>
-            <div class="form-check task-checks">
-              <label class="form-check-label">
+                </div>
+                <div class="form-check task-checks">
+                  <label class="form-check-label">
                 <input name="daily_chart[ate_dinner]" type="checkbox" class="form-check-input">
                 Ate dinner without complaining
               </label>
-            </div>
-            <div class="form-check task-checks">
-              <label class="form-check-label">
+                </div>
+                <div class="form-check task-checks">
+                  <label class="form-check-label">
                 <input name="daily_chart[dinner_dishes]" type="checkbox" class="form-check-input">
                 Cleared dinner dishes from the table
               </label>
-            </div>
-            <div class="form-check task-checks">
-              <label class="form-check-label">
+                </div>
+                <div class="form-check task-checks">
+                  <label class="form-check-label">
                 <input name="daily_chart[pjs]" type="checkbox" class="form-check-input">
                 Dressed for bed without assistance
               </label>
-            </div>
-            <div class="form-check task-checks">
-              <label class="form-check-label">
+                </div>
+                <div class="form-check task-checks">
+                  <label class="form-check-label">
                 <input name="daily_chart[teeth_pm]" type="checkbox" class="form-check-input">
                 Brushed teeth in the evening
               </label>
-            </div>
-            <div class="form-check task-checks">
-              <label class="form-check-label">
+                </div>
+                <div class="form-check task-checks">
+                  <label class="form-check-label">
                 <input name="daily_chart[bed_success]" type="checkbox" class="form-check-input">
                 Went to bed without a struggle
               </label>
+                </div>
+                <div class="form-group" id="tv-mins">
+                  <label>Comments:</label>
+                  <textarea name="daily_chart[comments]" type="textarea" class="form-control" rows="4" placeholder="Any notable comments from today? Achievements or struggles?"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <p>
+                    <input type="submit" class="btn btn-primary" name="submit" value="Save">
+                    <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
+                  </p>
+                </div>
+              </form>
             </div>
-            <div class="form-group" id="tv-mins">
-              <label>Comments:</label>
-              <textarea name="daily_chart[comments]" type="textarea" class="form-control" placeholder="Any notable comments from today? Achievements or struggles?"></textarea>
-            </div>
-            <div class="modal-footer">
-              <p>
-                <input type="submit" class="btn btn-primary" name="submit" value="Save">
-                <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
-              </p>
-            </div>
-          </form>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-<!-- End New Chart form -->
-
-<!-- Begin Get All Charts Container -->
-      <!-- <form id="getChartsButton" style="display: none">
-        <fieldset>
-          <input type="submit" name="submit" class="btn btn-primary" value="View All Charts">
-        </fieldset>
-      </form> -->
-      <!-- End Get All Charts Container -->
-
-<!-- Charts Display area -->
-  <div class="charts-table" id="showAllCharts"></div>
-<!-- <div id="editChart"></div> -->
-
-<!-- View single chart modal -->
-      <div class="modal fade" id="chart-view-modal" role="dialog">
-        <div class="modal-dialog modal-lg" role="document">
-          <div class="modal-content" id="chart-view">
 
           </div>
         </div>
       </div>
+    </div>
+    <!-- End New Chart form -->
 
-      <!-- End single chart modal -->
-</div>
+    <!-- Charts Display area -->
+    <div class="charts-table" id="showAllCharts"></div>
+    <!-- <div id="editChart"></div> -->
+
+    <!-- View single chart modal -->
+    <div class="modal fade" id="chart-view-modal" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" id="chart-view">
+
+        </div>
+      </div>
+    </div>
+    <!-- End single chart modal -->
+  </div>
+
 
 </body>
 

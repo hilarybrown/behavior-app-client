@@ -1,6 +1,7 @@
 'use strict'
 
 const showChartsTemplate = require('../templates/index-charts.handlebars')
+const showChartTemplate = require('../templates/show-chart.handlebars')
 const store = require('../store')
 const handlebars = require('../handlebars.js')
 
@@ -41,8 +42,15 @@ const getChartsFailure = function (data) {
   $('#appMessage').text('Error bringing back your behavior charts.')
 }
 
+const showChartView = function (data) {
+  $('#chart-view').empty()
+  $('#chart-view').append(data)
+}
+
 const showChartSuccess = function (response, status, xhr) {
   handlebars.showChartSmall(response.daily_chart)
+  $('#chart-view').empty()
+  $('#chart-view').append(handlebars.showChartSmall(response.daily_chart))
   $('#chart-view-modal').modal('show')
 }
 
@@ -72,9 +80,20 @@ const removeChartFailure = function (data) {
 }
 
 const updateChartSuccess = function (data) {
-  $('#editChartModal').modal('hide')
+  $('#chart-view-modal').modal('hide')
   $('#appMessage').show()
   $('#appMessage').text('Your chart has been updated.')
+}
+
+const updateChartRefreshSuccess = function (data) {
+  const showChartsHtml = showChartsTemplate({ daily_charts: data.daily_charts })
+  $('#authMessage').hide()
+  $('#chart-view-modal').modal('hide')
+  $('#appMessage').show()
+  $('#appMessage').text('Your chart has been updated.')
+  $('#showAllCharts').show()
+  $('#showAllCharts').html('')
+  $('#showAllCharts').html(showChartsHtml)
 }
 
 const updateChartFailure = function (data) {
@@ -94,5 +113,7 @@ module.exports = {
   createChartRefreshSuccess,
   removeChartRefreshSuccess,
   updateChartSuccess,
-  updateChartFailure
+  updateChartFailure,
+  updateChartRefreshSuccess,
+  showChartView
 }

@@ -26,22 +26,21 @@ const onGetCharts = function (event) {
     //   $(document).on('submit', '#update-chart', onUpdateChart)
     //   return charts
     // })
-    // .then(console.log('is this working?'))
     .then(ui.getChartsSuccess)
     .catch(ui.getChartsFailure)
 }
 
 const onShowChart = function (event) {
   event.preventDefault()
-  console.log('event.target is', event.target)
-  // const chartId = event.target.attributes['data-id'].value
-  const chartId = $(event.target).attr('data-id')
+  // const chartId = $(event.target).attr('data-id')
+  const chartId = event.target.dataset.id
   // const chartId = $(event.target).parent().attributes['data-id'].value
   api.showChart(chartId)
-    .then((charts) => {
-      $(document).on('submit', '#update-chart', onUpdateChart)
-      return charts
-    })
+    // .then((charts) => {
+    //   $(document).on('submit', '#update-chart', onUpdateChart)
+    //   return charts
+    // })
+    // .then(ui.showChartView)
     .then(ui.showChartSuccess)
     .catch(ui.showChartFailure)
 }
@@ -64,21 +63,27 @@ const onRemoveChartRefresh = function (event) {
 
 const onUpdateChart = function (event) {
   event.preventDefault()
-  const chartId = $(event.target).attr('data-id')
-  console.log('chartId is', chartId)
-  // const data = getFormFields(event.target)
-  // const chartId = $(event.target).attr('data-id')
-  // api.updateChart(chartId, data)
-  //   .then(ui.updateChartSuccess)
-  //   .catch(ui.updateChartFailure)
+  const data = getFormFields(this)
+  // console.log('data.daily_chart is', data.daily_chart)
+  const chartId = $('#update-chart').attr('data-id')
+  api.updateChart(chartId, data)
+    .then(onUpdateChartRefresh)
+    .catch(ui.updateChartFailure)
+}
+
+const onUpdateChartRefresh = function (event) {
+  api.getCharts()
+    .then(ui.updateChartRefreshSuccess)
+    .catch(ui.updateChartFailure)
 }
 
 const addHandlers = () => {
-  $('#getChartsButton').on('submit', onGetCharts)
+  // $('#getChartsButton').on('submit', onGetCharts)
   $('#new-chart').on('submit', onCreateChart)
   $('#showAllCharts').on('click', '.show-chart', onShowChart)
   $('#showAllCharts').on('click', '.remove', onRemoveChart)
-  $('#update-chart').on('click', 'button[data-update]', onUpdateChart)
+  $(document).on('submit', '#update-chart', onUpdateChart)
+  $('#update-chart').on('submit', '.update-button', onUpdateChart)
 }
 
 module.exports = {
