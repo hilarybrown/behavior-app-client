@@ -72,9 +72,20 @@ const removeChartFailure = function (data) {
 }
 
 const updateChartSuccess = function (data) {
-  $('#editChartModal').modal('hide')
+  $('#chart-view-modal').modal('hide')
   $('#appMessage').show()
   $('#appMessage').text('Your chart has been updated.')
+}
+
+const updateChartRefreshSuccess = function (data) {
+  const showChartsHtml = showChartsTemplate({ daily_charts: data.daily_charts })
+  $('#authMessage').hide()
+  $('#chart-view-modal').modal('hide')
+  $('#appMessage').show()
+  $('#appMessage').text('Your chart has been updated.')
+  $('#showAllCharts').show()
+  $('#showAllCharts').html('')
+  $('#showAllCharts').html(showChartsHtml)
 }
 
 const updateChartFailure = function (data) {
@@ -94,5 +105,6 @@ module.exports = {
   createChartRefreshSuccess,
   removeChartRefreshSuccess,
   updateChartSuccess,
-  updateChartFailure
+  updateChartFailure,
+  updateChartRefreshSuccess
 }

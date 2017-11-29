@@ -71,7 +71,13 @@ const onUpdateChart = function (event) {
   const chartId = $('#update-chart').attr('data-id')
   // console.log('chartId is', chartId)
   api.updateChart(chartId, data)
-    .then(ui.updateChartSuccess)
+    .then(onUpdateChartRefresh)
+    .catch(ui.updateChartFailure)
+}
+
+const onUpdateChartRefresh = function (event) {
+  api.getCharts()
+    .then(ui.updateChartRefreshSuccess)
     .catch(ui.updateChartFailure)
 }
 
