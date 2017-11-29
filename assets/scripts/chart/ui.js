@@ -129,6 +129,6 @@ module.exports = {
   removeChartRefreshSuccess,
   updateChartSuccess,
   updateChartFailure,
-  updateChartRefreshSuccess,
-  showChartView
+  updateChartRefreshSuccess
+  // showChartView
 }
