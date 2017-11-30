@@ -45,10 +45,6 @@ const onShowChart = function (event) {
     .catch(ui.showChartFailure)
 }
 
-const onShowChartResponses = function (event) {
-
-}
-
 const onRemoveChart = function (event) {
   event.preventDefault()
   // const data = $(event.target).parent().attr('data-id')
