@@ -77,6 +77,12 @@ const onUpdateChartRefresh = function (event) {
     .catch(ui.updateChartFailure)
 }
 
+const fadeModal = function () {
+  setTimeout(() => {
+    $('#alertModal').modal('hide')
+  }, 1000)
+}
+
 const addHandlers = () => {
   // $('#getChartsButton').on('submit', onGetCharts)
   $('#new-chart').on('submit', onCreateChart)
@@ -84,6 +90,7 @@ const addHandlers = () => {
   $('#showAllCharts').on('click', '.remove', onRemoveChart)
   $(document).on('submit', '#update-chart', onUpdateChart)
   $('#update-chart').on('submit', '.update-button', onUpdateChart)
+  $('#alertModal').on('shown.bs.modal', fadeModal)
 }
 
 module.exports = {
