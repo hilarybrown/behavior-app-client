@@ -71,6 +71,7 @@ const changePasswordFailure = function (data) {
 
 const signOutSuccess = function (data) {
   // $('#appMessage').hide()
+  $('#initial-heading').show()
   $('#showAllCharts').hide()
   $('#newChartContainer').hide()
   $('#sign-in-container').show()
