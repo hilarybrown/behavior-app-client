@@ -10,14 +10,19 @@
   <form id="update-chart" data-id="{{daily_chart.id}}">
     <div class="row form-group" id="strengths">
       <div class="col-xs-12">
+        <center><img src="{{daily_chart.picture}}" id="{{daily_chart.id}}" class="modal-img"></center>
+      </div>
+    </div>
+    <div class="row form-group" id="strengths">
+      <div class="col-xs-12">
         <label>Strengths</label>
         <input name="daily_chart[strengths]" type="text" class="form-control" placeholder="Strengths" value="{{daily_chart.strengths}}" required>
       </div>
     </div>
     <div class="row">
-  <div class="col-xs-12">
-    <h5>Brushed teeth in the morning</h5>
-    <select class="form-dropdown-input" id="teeth_am" name='daily_chart[teeth_am]' value="{{daily_chart.teeth_am}}" required>
+      <div class="col-xs-12">
+        <h5>Brushed teeth in the morning</h5>
+        <select class="form-dropdown-input" id="teeth_am" name='daily_chart[teeth_am]' value="{{daily_chart.teeth_am}}" required>
           <option value="{{daily_chart.teeth_am}}" selected  hidden>{{#if daily_chart.teeth_am}}{{daily_chart.teeth_am}}{{/if}}</option>
           <option value="Done">Done</option>
           <option value="Not Yet Done">Not Yet Done</option>
