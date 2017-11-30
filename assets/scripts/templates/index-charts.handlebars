@@ -16,21 +16,28 @@
         <div class="row">
           <div class="col-xs-1"></div>
           <div class="col-xs-10">
-            <h3 class="chart-date">Chart from: {{daily_chart.date_of_birth}}</h3>
+            <center><img src="{{daily_chart.picture}}" id="{{daily_chart.id}}" class="small-image"></center>
           </div>
           <div class="col-xs-1"></div>
         </div>
         <div class="row">
           <div class="col-xs-1"></div>
           <div class="col-xs-10">
-            <h3 class="kid-name">Child: {{daily_chart.kid}}</h3>
+            <h4 class="chart-date">Chart from: {{daily_chart.date_of_birth}}</h4>
           </div>
           <div class="col-xs-1"></div>
         </div>
         <div class="row">
           <div class="col-xs-1"></div>
           <div class="col-xs-10">
-            <h3 class="chart-comments">Comments from this day: {{daily_chart.comments}}</h3>
+            <h4 class="kid-name">Child: {{daily_chart.kid}}</h4>
+          </div>
+          <div class="col-xs-1"></div>
+        </div>
+        <div class="row">
+          <div class="col-xs-1"></div>
+          <div class="col-xs-10">
+            <h4 class="chart-comments">Comments from this day: {{daily_chart.comments}}</h4>
           </div>
           <div class="col-xs-1"></div>
         </div>
