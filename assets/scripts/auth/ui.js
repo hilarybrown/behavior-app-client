@@ -6,9 +6,9 @@ const showChartsTemplate = require('../templates/index-charts.handlebars')
 // store user's data upon successful sign up
 const signUpSuccess = function (data) {
   store.user = data.user
+  clearModals()
   $('#signUpModal').modal('hide')
   // $('#signUpModal').hide()
-  $('#sign-up')[0].reset()
   // $('#authMessage').show()
   // $('#authMessage').text('Congrats! You are now signed up. Please now SIGN IN with your new credentials to access your charts.')
   $('#alert-modal-content').addClass('alert-success')
@@ -25,6 +25,7 @@ const signUpFailure = function (data) {
 
 // show success message
 const signInSuccess = function (data) {
+  clearModals()
   $('#signInModal').modal('hide')
   $('#initial-heading').hide()
   $('#sign-in-container').hide()
@@ -49,6 +50,7 @@ const signInSuccess = function (data) {
 const signInIndexSuccess = function (data) {
   const showChartsHtml = showChartsTemplate({ daily_charts: data.daily_charts })
   // $('#authMessage').hide()
+  clearModals()
   $('#showAllCharts').show()
   $('#showAllCharts').html('')
   $('#showAllCharts').html(showChartsHtml)
@@ -61,6 +63,7 @@ const signInFailure = function (data) {
 }
 
 const changePasswordSuccess = function (data) {
+  clearModals()
   $('#change-password')[0].reset()
   $('#passwordUpdateModal').modal('hide')
   $('#alert-modal-content').addClass('alert-success')
@@ -76,6 +79,7 @@ const changePasswordFailure = function (data) {
 
 const signOutSuccess = function (data) {
   // $('#appMessage').hide()
+  clearModals()
   $('#initial-heading').show()
   $('#showAllCharts').hide()
   $('#newChartContainer').hide()
@@ -105,6 +109,10 @@ const signOutFailure = function (data) {
   $('#alertModal').modal('show')
 }
 
+const clearModals = function () {
+  $('input[name]').val('')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -114,5 +122,6 @@ module.exports = {
   changePasswordFailure,
   signOutSuccess,
   signOutFailure,
-  signInIndexSuccess
+  signInIndexSuccess,
+  clearModals
 }
