@@ -1,19 +1,13 @@
 <div class="modal-header">
   <div class="row">
     <div class="col-xs-12">
-      <h1 class="chart-heading">{{daily_chart.kid}} {{daily_chart.createdAt}}</h1>
+      <h1 class="chart-heading">{{daily_chart.kid}} - {{daily_chart.date_of_birth}}</h1>
     </div>
   </div>
 </div>
 
 <div class="modal-body">
   <form id="update-chart" data-id="{{daily_chart.id}}">
-    <div class="row form-group" id="dob">
-      <div class="col-xs-12">
-        <label>Date of Birth</label>
-        <input name="daily_chart[date_of_birth]" type="text" class="form-control" placeholder="MM/DD/YYYY" value="{{daily_chart.date_of_birth}}" required>
-      </div>
-    </div>
     <div class="row form-group" id="strengths">
       <div class="col-xs-12">
         <label>Strengths</label>
@@ -23,7 +17,7 @@
     <div class="row">
   <div class="col-xs-12">
     <h5>Brushed teeth in the morning</h5>
-    <select class="form-dropdown-input" id="teeth_am" name='daily_chart[teeth_am]' value="{{daily_chart.teeth_am}}">
+    <select class="form-dropdown-input" id="teeth_am" name='daily_chart[teeth_am]' value="{{daily_chart.teeth_am}}" required>
           <option value="" selected disabled hidden>Select true or false</option>
           <option value='True'>True</option>
           <option value='False'>False</option></select>
@@ -34,7 +28,7 @@
     <div class="row">
       <div class="col-xs-12">
         <h5>Cleared breakfast dishes from the table</h5>
-        <select class="form-dropdown-input" id="bfast_dishes" name='daily_chart[bfast_dishes]' value="{{daily_chart.bfast_dishes}}">
+        <select class="form-dropdown-input" id="bfast_dishes" name='daily_chart[bfast_dishes]' value="{{daily_chart.bfast_dishes}}" required>
           <option value="" selected disabled hidden>Select true or false</option>
           <option value='True'>True</option>
           <option value='False'>False</option></select>
@@ -44,7 +38,7 @@
     <div class="row">
       <div class="col-xs-12">
         <h5>Made the bed</h5>
-        <select class="form-dropdown-input" id="made_bed" name='daily_chart[made_bed]' value="{{daily_chart.made_bed}}">
+        <select class="form-dropdown-input" id="made_bed" name='daily_chart[made_bed]' value="{{daily_chart.made_bed}}" required>
           <option value="" selected disabled hidden>Select true or false</option>
           <option value='True'>True</option>
           <option value='False'>False</option></select>
@@ -53,7 +47,7 @@
     <div class="row">
       <div class="col-xs-12">
         <h5>Got dressed without assistance</h5>
-        <select class="form-dropdown-input" id="dressed" name='daily_chart[dressed]' value="{{daily_chart.dressed}}">
+        <select class="form-dropdown-input" id="dressed" name='daily_chart[dressed]' value="{{daily_chart.dressed}}" required>
           <option value="" selected disabled hidden>Select true or false</option>
           <option value='True'>True</option>
           <option value='False'>False</option></select>
@@ -62,7 +56,7 @@
     <div class="row">
       <div class="col-xs-12">
         <h5>Successful school drop-off (no crying)</h5>
-        <select class="form-dropdown-input" id="drop_off" name='daily_chart[drop_off]' value="{{daily_chart.drop_off}}">
+        <select class="form-dropdown-input" id="drop_off" name='daily_chart[drop_off]' value="{{daily_chart.drop_off}}" required>
           <option value="" selected disabled hidden>Select true or false</option>
           <option value='True'>True</option>
           <option value='False'>False</option></select>
@@ -71,7 +65,7 @@
     <div class="row">
       <div class="col-xs-12">
         <h5>Did not fight with sibling(s)</h5>
-        <select class="form-dropdown-input" id="no_fighting" name='daily_chart[no_fighting]' value="{{daily_chart.no_fighting}}">
+        <select class="form-dropdown-input" id="no_fighting" name='daily_chart[no_fighting]' value="{{daily_chart.no_fighting}}" required>
           <option value="" selected disabled hidden>Select true or false</option>
           <option value='True'>True</option>
           <option value='False'>False</option></select>
@@ -80,7 +74,7 @@
     <div class="row">
       <div class="col-xs-12">
         <h5>Ate dinner without complaining</h5>
-        <select class="form-dropdown-input" id="ate_dinner" name='daily_chart[ate_dinner]' value="{{daily_chart.ate_dinner}}">
+        <select class="form-dropdown-input" id="ate_dinner" name='daily_chart[ate_dinner]' value="{{daily_chart.ate_dinner}}" required>
           <option value="" selected disabled hidden>Select true or false</option>
           <option value='True'>True</option>
           <option value='False'>False</option></select>
@@ -89,7 +83,7 @@
     <div class="row">
       <div class="col-xs-12">
         <h5>Cleared dinner dishes from the table</h5>
-        <select class="form-dropdown-input" id="dinner_dishes" name='daily_chart[dinner_dishes]' value="{{daily_chart.dinner_dishes}}">
+        <select class="form-dropdown-input" id="dinner_dishes" name='daily_chart[dinner_dishes]' value="{{daily_chart.dinner_dishes}}" required>
           <option value="" selected disabled hidden>Select true or false</option>
           <option value='True'>True</option>
           <option value='False'>False</option></select>
@@ -98,7 +92,7 @@
     <div class="row">
       <div class="col-xs-12">
         <h5>Dressed for bed without assistance</h5>
-        <select class="form-dropdown-input" id="pjs" name='daily_chart[pjs]' value="{{daily_chart.pjs}}">
+        <select class="form-dropdown-input" id="pjs" name='daily_chart[pjs]' value="{{daily_chart.pjs}}" required>
           <option value="" selected disabled hidden>Select true or false</option>
           <option value='True'>True</option>
           <option value='False'>False</option></select>
@@ -107,7 +101,7 @@
     <div class="row">
       <div class="col-xs-12">
         <h5>Brushed teeth in the evening</h5>
-        <select class="form-dropdown-input" id="teeth_pm" name='daily_chart[teeth_pm]' value="{{daily_chart.teeth_pm}}">
+        <select class="form-dropdown-input" id="teeth_pm" name='daily_chart[teeth_pm]' value="{{daily_chart.teeth_pm}}" required>
           <option value="" selected disabled hidden>Select true or false</option>
           <option value='True'>True</option>
           <option value='False'>False</option></select>
@@ -116,7 +110,7 @@
     <div class="row">
       <div class="col-xs-12">
         <h5>Went to bed without a struggle</h5>
-        <select class="form-dropdown-input" id="bed_success" name='daily_chart[bed_success]' value="{{daily_chart.bed_success}}">
+        <select class="form-dropdown-input" id="bed_success" name='daily_chart[bed_success]' value="{{daily_chart.bed_success}}" required>
           <option value="" selected disabled hidden>Select true or false</option>
           <option value='True'>True</option>
           <option value='False'>False</option></select>
