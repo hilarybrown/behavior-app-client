@@ -44,7 +44,7 @@ const getChartsFailure = function (data) {
   // $('#appMessage').show()
   // $('#appMessage').text('Error bringing back your behavior charts.')
   $('#alert-modal-content').addClass('alert-danger')
-  $('#alert-modal-content').html('<p>Error fetching your behavior charts</p>')
+  $('#alert-modal-content').html("<h3>You don't have any charts yet. Click the button to Create Today's Daily Chart!</h3>")
   $('#alertModal').modal('show')
 }
 
@@ -57,6 +57,13 @@ const showChartSuccess = function (response, status, xhr) {
   handlebars.showChartSmall(response.daily_chart)
   $('#chart-view').empty()
   $('#chart-view').append(handlebars.showChartSmall(response.daily_chart))
+  $('#teeth_am').val(response.daily_chart.teeth_am)
+  $('#bfast_dishes').val(response.daily_chart.bfast_dishes)
+  $('#made_bed').val(response.daily_chart.made_bed)
+  $('#dressed').val(response.daily_chart.dressed)
+  $('#drop_off').val(response.daily_chart.drop_off)
+  $('#no_fighting').val(response.daily_chart.no_fighting)
+  $('#ate_dinner').val(response.daily_chart.ate_dinner)
   $('#chart-view-modal').modal('show')
 }
 

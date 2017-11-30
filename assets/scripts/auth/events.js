@@ -26,7 +26,7 @@ const onSignIn = function (event) {
 const onSignInIndex = function (event) {
   chartApi.getCharts()
     .then(ui.signInIndexSuccess)
-    .catch(chartUi.createChartFailure)
+    .catch(chartUi.getChartsFailure)
 }
 
 const onChangePassword = function (event) {

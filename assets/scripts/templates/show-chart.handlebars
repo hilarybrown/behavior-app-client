@@ -21,58 +21,105 @@
       </div>
     </div>
     <div class="row">
+  <div class="col-xs-12">
+    <h5>Brushed teeth in the morning</h5>
+    <select class="form-dropdown-input" id="teeth_am" name='daily_chart[teeth_am]' value="{{daily_chart.teeth_am}}">
+          <option value="" selected disabled hidden>Select true or false</option>
+          <option value='True'>True</option>
+          <option value='False'>False</option></select>
+      </div>
+    </div>
+    <br/>
+
+    <div class="row">
       <div class="col-xs-12">
-        <h5>Brushed teeth in the morning</h5><input name="daily_chart[teeth_am]" type="checkbox" class="form-check-input" value="{{daily_chart.teeth_am}}">
+        <h5>Cleared breakfast dishes from the table</h5>
+        <select class="form-dropdown-input" id="bfast_dishes" name='daily_chart[bfast_dishes]' value="{{daily_chart.bfast_dishes}}">
+          <option value="" selected disabled hidden>Select true or false</option>
+          <option value='True'>True</option>
+          <option value='False'>False</option></select>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-xs-12">
+        <h5>Made the bed</h5>
+        <select class="form-dropdown-input" id="made_bed" name='daily_chart[made_bed]' value="{{daily_chart.made_bed}}">
+          <option value="" selected disabled hidden>Select true or false</option>
+          <option value='True'>True</option>
+          <option value='False'>False</option></select>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <h5>Cleared breakfast dishes from the table</h5><input name="daily_chart[bfast_dishes]" type="checkbox" class="form-check-input" value="{{daily_chart.bfast_dishes}}">
+        <h5>Got dressed without assistance</h5>
+        <select class="form-dropdown-input" id="dressed" name='daily_chart[dressed]' value="{{daily_chart.dressed}}">
+          <option value="" selected disabled hidden>Select true or false</option>
+          <option value='True'>True</option>
+          <option value='False'>False</option></select>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <h5>Made the bed</h5><input name="daily_chart[made_bed]" type="checkbox" class="form-check-input" value="{{daily_chart.made_bed}}">
+        <h5>Successful school drop-off (no crying)</h5>
+        <select class="form-dropdown-input" id="drop_off" name='daily_chart[drop_off]' value="{{daily_chart.drop_off}}">
+          <option value="" selected disabled hidden>Select true or false</option>
+          <option value='True'>True</option>
+          <option value='False'>False</option></select>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <h5>Got dressed without assistance</h5><input name="daily_chart[dressed]" type="checkbox" class="form-check-input" value="{{daily_chart.dressed}}">
+        <h5>Did not fight with sibling(s)</h5>
+        <select class="form-dropdown-input" id="no_fighting" name='daily_chart[no_fighting]' value="{{daily_chart.no_fighting}}">
+          <option value="" selected disabled hidden>Select true or false</option>
+          <option value='True'>True</option>
+          <option value='False'>False</option></select>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <h5>Successful school drop-off (no crying)</h5><input name="daily_chart[drop_off]" type="checkbox" class="form-check-input" value="{{daily_chart.drop_off}}">
+        <h5>Ate dinner without complaining</h5>
+        <select class="form-dropdown-input" id="ate_dinner" name='daily_chart[ate_dinner]' value="{{daily_chart.ate_dinner}}">
+          <option value="" selected disabled hidden>Select true or false</option>
+          <option value='True'>True</option>
+          <option value='False'>False</option></select>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <h5>Did not fight with sibling(s)</h5><input name="daily_chart[no_fighting]" type="checkbox" class="form-check-input" value="{{daily_chart.no_fighting}}">
+        <h5>Cleared dinner dishes from the table</h5>
+        <select class="form-dropdown-input" id="dinner_dishes" name='daily_chart[dinner_dishes]' value="{{daily_chart.dinner_dishes}}">
+          <option value="" selected disabled hidden>Select true or false</option>
+          <option value='True'>True</option>
+          <option value='False'>False</option></select>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <h5>Ate dinner without complaining</h5><input name="daily_chart[ate_dinner]" type="checkbox" class="form-check-input" value="{{daily_chart.ate_dinner}}">
+        <h5>Dressed for bed without assistance</h5>
+        <select class="form-dropdown-input" id="pjs" name='daily_chart[pjs]' value="{{daily_chart.pjs}}">
+          <option value="" selected disabled hidden>Select true or false</option>
+          <option value='True'>True</option>
+          <option value='False'>False</option></select>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <h5>Cleared dinner dishes from the table</h5><input name="daily_chart[dinner_dishes]" type="checkbox" class="form-check-input" value="{{daily_chart.dinner_dishes}}">
+        <h5>Brushed teeth in the evening</h5>
+        <select class="form-dropdown-input" id="teeth_pm" name='daily_chart[teeth_pm]' value="{{daily_chart.teeth_pm}}">
+          <option value="" selected disabled hidden>Select true or false</option>
+          <option value='True'>True</option>
+          <option value='False'>False</option></select>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <h5>Dressed for bed without assistance</h5><input name="daily_chart[pjs]" type="checkbox" class="form-check-input" value="{{daily_chart.pjs}}">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <h5>Brushed teeth in the evening</h5><input name="daily_chart[teeth_pm]" type="checkbox" class="form-check-input" value="{{daily_chart.teeth_pm}}">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <h5>Went to bed without a struggle</h5><input name="daily_chart[bed_success]" type="checkbox" class="form-check-input" value="{{daily_chart.bed_success}}">
+        <h5>Went to bed without a struggle</h5>
+        <select class="form-dropdown-input" id="bed_success" name='daily_chart[bed_success]' value="{{daily_chart.bed_success}}">
+          <option value="" selected disabled hidden>Select true or false</option>
+          <option value='True'>True</option>
+          <option value='False'>False</option></select>
       </div>
     </div>
     <div class="row">
