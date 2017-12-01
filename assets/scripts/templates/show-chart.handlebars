@@ -2,6 +2,9 @@
   <div class="row">
     <div class="col-xs-12">
       <h1 class="chart-heading">{{daily_chart.kid}} - {{daily_chart.date_of_birth}}</h1>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
     </div>
   </div>
 </div>
@@ -138,9 +141,9 @@
       </div>
     </div>
     <br/>
-    <div class="row">
-      <div class="col-xs-7"></div>
-      <div class="col-xs-5">
+    <div class="row show-buttons">
+      <div class="col-xs-6 col-sm-8"></div>
+      <div class="col-xs-6 col-sm-4">
         <input data-id="{{daily_chart.id}}" type="submit" class="btn update-button btn-primary save-button" name="submit" value="Save Update">
         <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
       </div>

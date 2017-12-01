@@ -8,22 +8,17 @@ const signUpSuccess = function (data) {
   store.user = data.user
   clearModals()
   $('#signUpModal').modal('hide')
-  // $('#signUpModal').hide()
-  // $('#authMessage').show()
-  // $('#authMessage').text('Congrats! You are now signed up. Please now SIGN IN with your new credentials to access your charts.')
   $('#alert-modal-content').addClass('alert-success')
   $('#alert-modal-content').html('<p>Congrats! You are now signed up. Please now SIGN IN with your new credentials to access your charts.</p>')
   $('#alertModal').modal('show')
 }
 
 const signUpFailure = function (data) {
-  // $('#authMessage').text('Error on sign up')
   $('#alert-modal-content').addClass('alert-danger')
   $('#alert-modal-content').html('<p>Error on Sign Up</p>')
   $('#alertModal').modal('show')
 }
 
-// show success message
 const signInSuccess = function (data) {
   clearModals()
   $('#signInModal').modal('hide')
@@ -42,14 +37,11 @@ const signInSuccess = function (data) {
   $('#alert-modal-content').addClass('alert-success')
   $('#alert-modal-content').html('<p>Welcome!</p>')
   $('#alertModal').modal('show')
-  // $('#authMessage').show()
-  // $('#authMessage').text('Welcome!')
   store.user = data.user
 }
 
 const signInIndexSuccess = function (data) {
   const showChartsHtml = showChartsTemplate({ daily_charts: data.daily_charts })
-  // $('#authMessage').hide()
   clearModals()
   $('#showAllCharts').show()
   $('#showAllCharts').html('')
@@ -78,7 +70,6 @@ const changePasswordFailure = function (data) {
 }
 
 const signOutSuccess = function (data) {
-  // $('#appMessage').hide()
   clearModals()
   $('#initial-heading').show()
   $('#showAllCharts').hide()
@@ -93,8 +84,6 @@ const signOutSuccess = function (data) {
   $('#sign-out').hide()
   $('#sign-in').show()
   $('#change-password').show()
-  // $('#authMessage').show()
-  // $('#authMessage').text('Come back again soon!')
   $('#alert-modal-content').addClass('alert-success')
   $('#alert-modal-content').html('<p>Come back again soon!</p>')
   $('#alertModal').modal('show')
@@ -102,8 +91,6 @@ const signOutSuccess = function (data) {
 }
 
 const signOutFailure = function (data) {
-  // $('#appMessage').hide()
-  // $('#auth-message').text('Error on sign out')
   $('#alert-modal-content').addClass('alert-danger')
   $('#alert-modal-content').html('<p>Error on Sign Out</p>')
   $('#alertModal').modal('show')

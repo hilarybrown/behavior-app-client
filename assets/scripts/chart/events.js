@@ -22,35 +22,22 @@ const onCreateChartRefresh = function (event) {
 const onGetCharts = function (event) {
   event.preventDefault()
   api.getCharts()
-    // .then((charts) => {
-    //   $(document).on('submit', '#update-chart', onUpdateChart)
-    //   return charts
-    // })
     .then(ui.getChartsSuccess)
     .catch(ui.getChartsFailure)
 }
 
 const onShowChart = function (event) {
   event.preventDefault()
-  // const chartId = $(event.target).attr('data-id')
   const chartId = event.target.dataset.id
-  // const chartId = $(event.target).parent().attributes['data-id'].value
   api.showChart(chartId)
-    // .then((charts) => {
-    //   $(document).on('submit', '#update-chart', onUpdateChart)
-    //   return charts
-    // })
-    // .then(ui.showChartView)
     .then(ui.showChartSuccess)
     .catch(ui.showChartFailure)
 }
 
 const onRemoveChart = function (event) {
   event.preventDefault()
-  // const data = $(event.target).parent().attr('data-id')
   const data = $(event.target).attr('data-id')
   api.removeChart(data)
-    // .then(ui.removeChartSuccess)
     .then(onRemoveChartRefresh)
     .catch(ui.removeChartFailure)
 }
@@ -64,7 +51,6 @@ const onRemoveChartRefresh = function (event) {
 const onUpdateChart = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  // console.log('data.daily_chart is', data.daily_chart)
   const chartId = $('#update-chart').attr('data-id')
   api.updateChart(chartId, data)
     .then(onUpdateChartRefresh)
@@ -84,7 +70,6 @@ const fadeModal = function () {
 }
 
 const addHandlers = () => {
-  // $('#getChartsButton').on('submit', onGetCharts)
   $('#new-chart').on('submit', onCreateChart)
   $('#showAllCharts').on('click', '.show-chart', onShowChart)
   $('#showAllCharts').on('click', '.remove', onRemoveChart)

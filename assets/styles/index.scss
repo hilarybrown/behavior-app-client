@@ -1,2 +1,41 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+$yellow: #ffd700;
+$black: #000;
+$gray: #b7b7b7;
+$white: #fff;
+
+.btn-primary {
+  background-color: $yellow;
+  color: $black;
+}
+
+.remove {
+  background-color: $black;
+  border-color: $yellow;
+  color: $yellow;
+}
+
+.btn-secondary {
+  background-color: $gray;
+  border-color: $yellow;
+  color: $black;
+}
+
+.navbar {
+  background-color: $gray;
+}
+
+.navbar-brand {
+  color: $black;
+}
+
+.jumbotron {
+  background-color: $gray;
+  color: $black;
+}
+
+.modal-header {
+  background-color: $gray;
+}
