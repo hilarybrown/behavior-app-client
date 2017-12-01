@@ -1,7 +1,7 @@
 # bee.have Client Front-end
 
 ### Back-end Repository:
-- https://github.com/hilarybrown/behavior-api
+- https://github.com/hilarybrown/behavior-app-api
 
 ### Back-end Deployed Heroku site:
 - https://glacial-scrubland-58961.herokuapp.com
