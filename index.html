@@ -18,7 +18,7 @@
 
 
 
-<!-- Begin Navbar -->
+  <!-- Begin Navbar -->
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -40,11 +40,13 @@
           <li><a href="#" data-toggle="modal" id="create-button" data-target="#new-chart-modal" style="display: none">Create Today's Chart</a></li>
           <li><a href="#" data-toggle="modal" id="update-pw-button" data-target="#passwordUpdateModal" style="display: none">Update Password</a></li>
           <li><a href="#" type="submit" id="signout-button" name="submit" style="display: none">Sign Out</a></li>
-          </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
   </nav>
-<!-- End Navbar -->
+  <!-- End Navbar -->
 
 
 
@@ -151,10 +153,6 @@
       </div>
     </div>
 
-    <!-- Sign In Button trigger modal -->
-    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">
-              Sign In
-            </button> -->
 
     <!-- Sign In Modal -->
     <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="true">
@@ -177,7 +175,6 @@
                 <input name="credentials[password]" type="password" class="form-control" placeholder="Password" required>
               </div>
               <div class="modal-footer">
-                <!-- <input type="submit" class="btn btn-primary" name="submit" value="Sign In"> -->
                 <button type="submit" class="btn btn-primary" name="submit">Sign In</button>
                 <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
               </div>
@@ -192,45 +189,43 @@
 
 
 
-<!-- Begin New Chart form container -->
-<div class="new-chart-container" id=newChartContainer style="display: none">
-  <!-- New Chart Button trigger modal -->
-  <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-chart-modal">Create Today's Chart</button> -->
+  <!-- Begin New Chart form container -->
+  <div class="new-chart-container" id=newChartContainer style="display: none">
 
-  <!-- New Chart Modal -->
-  <div class="modal fade" id="new-chart-modal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title auth-btn" id="signUpModalLabel">Today's Daily Behavior Chart</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <!-- New Chart Modal -->
+    <div class="modal fade" id="new-chart-modal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title auth-btn" id="signUpModalLabel">Today's Daily Behavior Chart</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
-        </div>
-        <div class="modal-body">
-          <form id="new-chart">
-            <div class="form-group" id="todaysDate">
-              <label>Today's Date</label>
-              <input name="daily_chart[date_of_birth]" type="text" class="form-control" placeholder="MM/DD/YYYY" required>
-            </div>
-            <div class="form-group" id="childName">
-              <label>Child's Name</label>
-              <input name="daily_chart[kid]" type="text" class="form-control" placeholder="First Name only" required>
-            </div>
-            <div class="form-group" id="childImage">
-              <label>Image of Child</label>
-              <input name="daily_chart[picture]" type="input" class="form-control" placeholder="Insert URL for Image of the Child" required>
-            </div>
-            <div class="form-group" id="strengths">
-              <label>Child's Strengths</label>
-              <input name="daily_chart[strengths]" type="text" class="form-control" placeholder="Child's Strengths" required>
-            </div>
-            <p>Select true for all tasks that your child has already completed today, and click Save. You can edit the chart as the day goes on.</p>
+          </div>
+          <div class="modal-body">
+            <form id="new-chart">
+              <div class="form-group" id="todaysDate">
+                <label>Today's Date</label>
+                <input name="daily_chart[date_of_birth]" type="text" class="form-control" placeholder="MM/DD/YYYY" required>
+              </div>
+              <div class="form-group" id="childName">
+                <label>Child's Name</label>
+                <input name="daily_chart[kid]" type="text" class="form-control" placeholder="First Name only" required>
+              </div>
+              <div class="form-group" id="childImage">
+                <label>Image of Child</label>
+                <input name="daily_chart[picture]" type="input" class="form-control" placeholder="Insert URL for Image of the Child" required>
+              </div>
+              <div class="form-group" id="strengths">
+                <label>Child's Strengths</label>
+                <input name="daily_chart[strengths]" type="text" class="form-control" placeholder="Child's Strengths" required>
+              </div>
+              <p>Select true for all tasks that your child has already completed today, and click Save. You can edit the chart as the day goes on.</p>
               <div class="form-group" id="teeth_am">
-              <label class="form-dropdown-label">
+                <label class="form-dropdown-label">
                 Brushed teeth in the morning
               </label>
-              <select name="daily_chart[teeth_am]" class="form-dropdown-input" required>
+                <select name="daily_chart[teeth_am]" class="form-dropdown-input" required>
                 <option value="" selected disabled hidden></option>
                 <option value="Done">Done</option>
                 <option value="Not Yet Done">Not Yet Done</option>
@@ -240,7 +235,7 @@
                 <label class="form-dropdown-label">
                 Cleared breakfast dishes from the table
               </label>
-              <select name="daily_chart[bfast_dishes]" class="form-dropdown-input" required>
+                <select name="daily_chart[bfast_dishes]" class="form-dropdown-input" required>
                 <option value="" selected disabled hidden></option>
                 <option value="Done">Done</option>
                 <option value="Not Yet Done">Not Yet Done</option>
@@ -250,7 +245,7 @@
                 <label class="form-dropdown-label">
                 Made the bed
               </label>
-              <select name="daily_chart[made_bed]" class="form-dropdown-input" required>
+                <select name="daily_chart[made_bed]" class="form-dropdown-input" required>
                 <option value="" selected disabled hidden></option>
                 <option value="Done">Done</option>
                 <option value="Not Yet Done">Not Yet Done</option>
@@ -260,7 +255,7 @@
                 <label class="form-dropdown-label">
                 Got dressed without assistance
               </label>
-              <select name="daily_chart[dressed]" class="form-dropdown-input" required>
+                <select name="daily_chart[dressed]" class="form-dropdown-input" required>
                 <option value="" selected disabled hidden></option>
                 <option value="Done">Done</option>
                 <option value="Not Yet Done">Not Yet Done</option>
@@ -270,7 +265,7 @@
                 <label class="form-dropdown-label">
                 Successful school drop-off (no crying)
               </label>
-              <select name="daily_chart[drop_off]" class="form-dropdown-input" required>
+                <select name="daily_chart[drop_off]" class="form-dropdown-input" required>
                 <option value="" selected disabled hidden></option>
                 <option value="Done">Done</option>
                 <option value="Not Yet Done">Not Yet Done</option>
@@ -280,7 +275,7 @@
                 <label class="form-dropdown-label">
                 Did not fight with sibling(s)
               </label>
-              <select name="daily_chart[no_fighting]" class="form-dropdown-input" required>
+                <select name="daily_chart[no_fighting]" class="form-dropdown-input" required>
                 <option value="" selected disabled hidden></option>
                 <option value="Done">Done</option>
                 <option value="Not Yet Done">Not Yet Done</option>
@@ -290,7 +285,7 @@
                 <label class="form-dropdown-label">
                 Ate dinner without complaining
               </label>
-              <select name="daily_chart[ate_dinner]" class="form-dropdown-input" required>
+                <select name="daily_chart[ate_dinner]" class="form-dropdown-input" required>
                 <option value="" selected disabled hidden></option>
                 <option value="Done">Done</option>
                 <option value="Not Yet Done">Not Yet Done</option>
@@ -300,7 +295,7 @@
                 <label class="form-dropdown-label">
                 Cleared dinner dishes from the table
               </label>
-              <select name="daily_chart[dinner_dishes]" class="form-dropdown-input" required>
+                <select name="daily_chart[dinner_dishes]" class="form-dropdown-input" required>
                 <option value="" selected disabled hidden></option>
                 <option value="Done">Done</option>
                 <option value="Not Yet Done">Not Yet Done</option>
@@ -310,7 +305,7 @@
                 <label class="form-dropdown-label">
                 Dressed for bed without assistance
               </label>
-              <select name="daily_chart[pjs]" class="form-dropdown-input" required>
+                <select name="daily_chart[pjs]" class="form-dropdown-input" required>
                 <option value="" selected disabled hidden></option>
                 <option value="Done">Done</option>
                 <option value="Not Yet Done">Not Yet Done</option>
@@ -320,7 +315,7 @@
                 <label class="form-dropdown-label">
                 Brushed teeth in the evening
               </label>
-              <select name="daily_chart[teeth_pm]" class="form-dropdown-input" required>
+                <select name="daily_chart[teeth_pm]" class="form-dropdown-input" required>
                 <option value="" selected disabled hidden></option>
                 <option value="Done">Done</option>
                 <option value="Not Yet Done">Not Yet Done</option>
@@ -330,7 +325,7 @@
                 <label class="form-dropdown-label">
                 Went to bed without a struggle
               </label>
-              <select name="daily_chart[bed_success]" class="form-dropdown-input" required>
+                <select name="daily_chart[bed_success]" class="form-dropdown-input" required>
                 <option value="" selected disabled hidden></option>
                 <option value="Done">Done</option>
                 <option value="Not Yet Done">Not Yet Done</option>
@@ -343,7 +338,6 @@
               <div class="modal-footer">
                 <p>
                   <button type="submit" class="btn btn-primary" name="submit">Save</button>
-                  <!-- <input type="submit" class="btn btn-primary" name="submit" value="Save"> -->
                   <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
                 </p>
               </div>
@@ -357,7 +351,6 @@
 
   <!-- Charts Display area -->
   <div class="charts-table" id="showAllCharts"></div>
-  <!-- <div id="editChart"></div> -->
 
   <!-- View single chart modal -->
   <div class="modal fade" id="chart-view-modal" role="dialog">
