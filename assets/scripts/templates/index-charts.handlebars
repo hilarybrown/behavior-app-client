@@ -11,8 +11,8 @@
   </div>
   <div class="container-fluid">
     {{#each daily_charts as |daily_chart|}}
-
-      <div class="col-xs-12 col-sm-4 well index-box">
+    <div class="col-sm-1"></div>
+      <div class="col-xs-12 col-sm-3 well index-box">
         <div class="row">
           <div class="col-xs-1"></div>
           <div class="col-xs-10">
@@ -23,7 +23,7 @@
         <div class="row">
           <div class="col-xs-1"></div>
           <div class="col-xs-10">
-            <h4 class="chart-date">Chart from: {{daily_chart.date_of_birth}}</h4>
+            <h4 class="chart-date">Date: {{daily_chart.date_of_birth}}</h4>
           </div>
           <div class="col-xs-1"></div>
         </div>
@@ -43,9 +43,9 @@
         </div>
         <br/>
         <div class="row">
-          <div class="col-xs-7"></div>
-          <div class="col-xs-5">
-            <button class="btn btn-default show-chart" type="button" data-id="{{daily_chart.id}}">View</button>
+          <div class="col-xs-6"></div>
+          <div class="col-xs-6">
+            <button class="btn btn-default btn-primary show-chart" type="button" data-id="{{daily_chart.id}}">View</button>
             <button class="btn btn-default remove" type="button" data-id="{{daily_chart.id}}">Delete</button>
           </div>
         </div>

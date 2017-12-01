@@ -50,19 +50,6 @@
 
   <div id="content"></div>
 
-  <!-- Container for all Messages shown to user -->
-  <div class="messageContainer">
-    <!-- Begin Signed In as... container -->
-    <div id="currentUserMessage"></div>
-
-    <!-- user message container -->
-    <div class="message" id="appMessage"></div>
-
-    <!-- Auth User Message -->
-    <div class="message" id="authMessage"></div>
-  </div>
-  <!-- End messages container -->
-
   <!-- Begin Password Update form container -->
   <div class="password-update-container" id=pwUpdateContainer style="display: none">
     <!-- Password Update Button trigger modal -->
@@ -91,7 +78,8 @@
                 <input name="passwords[new]" type="password" class="form-control" placeholder="New Password">
               </div>
               <div class="modal-footer">
-                <input type="submit" class="btn btn-primary" name="submit" value="Change Password">
+                <!-- <input type="submit" class="btn btn-primary" name="submit" value="Change Password"> -->
+                <button type="submit" class="btn btn-primary" name="submit">Change Password</button>
                 <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
               </div>
             </form>
@@ -151,7 +139,8 @@
               </div>
               <div class="modal-footer">
                 <p>
-                  <input type="submit" class="btn btn-primary" name="submit" value="Sign Up">
+                  <!-- <input type="submit" class="btn btn-primary" name="submit" value="Sign Up"> -->
+                  <button type="submit" class="btn btn-primary" name="submit">Sign Up</button>
                   <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
                 </p>
               </div>
@@ -188,7 +177,8 @@
                 <input name="credentials[password]" type="password" class="form-control" placeholder="Password" required>
               </div>
               <div class="modal-footer">
-                <input type="submit" class="btn btn-primary" name="submit" value="Sign In">
+                <!-- <input type="submit" class="btn btn-primary" name="submit" value="Sign In"> -->
+                <button type="submit" class="btn btn-primary" name="submit">Sign In</button>
                 <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
               </div>
             </form>
@@ -352,7 +342,8 @@
               </div>
               <div class="modal-footer">
                 <p>
-                  <input type="submit" class="btn btn-primary" name="submit" value="Save">
+                  <button type="submit" class="btn btn-primary" name="submit">Save</button>
+                  <!-- <input type="submit" class="btn btn-primary" name="submit" value="Save"> -->
                   <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
                 </p>
               </div>

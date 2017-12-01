@@ -78,7 +78,6 @@ const changePasswordFailure = function (data) {
 }
 
 const signOutSuccess = function (data) {
-  // $('#appMessage').hide()
   clearModals()
   $('#initial-heading').show()
   $('#showAllCharts').hide()
@@ -93,8 +92,6 @@ const signOutSuccess = function (data) {
   $('#sign-out').hide()
   $('#sign-in').show()
   $('#change-password').show()
-  // $('#authMessage').show()
-  // $('#authMessage').text('Come back again soon!')
   $('#alert-modal-content').addClass('alert-success')
   $('#alert-modal-content').html('<p>Come back again soon!</p>')
   $('#alertModal').modal('show')
