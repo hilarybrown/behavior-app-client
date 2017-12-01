@@ -31,9 +31,12 @@ Before writing any code, I mapped out my ERD, wireframes and use stories to make
 For problem solving, once I had exhausted my own mental library of options, I would consult the project issues queue to see if anyone else had hit a similar issue as me before and what they had done to resolve. Then I would search through Google to find possible solutions to my problem, and if neither of those routes produced any results, I would open an issue in the queue as well as consult my classmates to help resolve the issue together.
 
 ## Wireframes
-- ![Sign-Up/Sign-In screen](https://i.imgur.com/pOEVSUrm.jpg)
-- ![Main Display/Index screen](https://i.imgur.com/flLRoZFm.jpg)
-- ![Show one item screen](https://i.imgur.com/xByGjuNm.jpg)
+![Sign-Up/Sign-In screen](https://i.imgur.com/pOEVSUrm.jpg)
+![Main Display/Index screen](https://i.imgur.com/flLRoZFm.jpg)
+![Show one item screen](https://i.imgur.com/xByGjuNm.jpg)
+
+## Screenshot of bee.have
+![bee.have](https://i.imgur.com/fYm202em.png)
 
 ## User Stories
 - As a user, I want to be able to sign in to the application
