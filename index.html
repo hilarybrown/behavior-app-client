@@ -54,10 +54,6 @@
 
   <!-- Begin Password Update form container -->
   <div class="password-update-container" id=pwUpdateContainer style="display: none">
-    <!-- Password Update Button trigger modal -->
-    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#passwordUpdateModal">
-        Update Password
-      </button> -->
 
     <!-- Password Update Modal -->
     <div class="modal fade" id="passwordUpdateModal" tabindex="-1" role="dialog" aria-labelledby="passwordUpdateModalLabel" aria-hidden="true">
@@ -80,7 +76,6 @@
                 <input name="passwords[new]" type="password" class="form-control" placeholder="New Password">
               </div>
               <div class="modal-footer">
-                <!-- <input type="submit" class="btn btn-primary" name="submit" value="Change Password"> -->
                 <button type="submit" class="btn btn-primary" name="submit">Change Password</button>
                 <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
               </div>
@@ -91,15 +86,6 @@
     </div>
 
   </div>
-  <!-- End password update form container -->
-
-  <!-- Begin Sign Out Container -->
-  <!-- <form id="sign-out" style="display: none">
-    <fieldset>
-      <input type="submit" name="submit" class="btn btn-primary" value="Sign out">
-    </fieldset>
-  </form> -->
-  <!-- End Sign Out Container -->
 
   <div id="initial-heading">
     <a href="https://imgur.com/Jn8Ep1o"><img src="https://i.imgur.com/Jn8Ep1os.jpg" title="source: imgur.com" /></a>
@@ -112,8 +98,6 @@
 
   <!-- Begin Sign up and Sign in Container -->
   <div class="auth-container" id="sign-in-container">
-    <!-- Sign Up Button trigger modal -->
-    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">Sign Up</button> -->
 
     <!-- Sign Up Modal -->
     <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
@@ -141,7 +125,6 @@
               </div>
               <div class="modal-footer">
                 <p>
-                  <!-- <input type="submit" class="btn btn-primary" name="submit" value="Sign Up"> -->
                   <button type="submit" class="btn btn-primary" name="submit">Sign Up</button>
                   <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
                 </p>
@@ -220,7 +203,7 @@
                 <label>Child's Strengths</label>
                 <input name="daily_chart[strengths]" type="text" class="form-control" placeholder="Child's Strengths" required>
               </div>
-              <p>Select true for all tasks that your child has already completed today, and click Save. You can edit the chart as the day goes on.</p>
+              <p>Select a value for any tasks that your child has already completed today, and click Save. You can edit the chart as the day goes on.</p>
               <div class="form-group" id="teeth_am">
                 <label class="form-dropdown-label">
                 Brushed teeth in the morning
