@@ -34,9 +34,9 @@ const signInSuccess = function (data) {
   $('#sign-out').show()
   $('#newMovieContainer').show()
   $('#sign-in')[0].reset()
-  $('#alert-modal-content').addClass('alert-success')
-  $('#alert-modal-content').html('<p>Welcome!</p>')
-  $('#alertModal').modal('show')
+  // $('#alert-modal-content').addClass('alert-success')
+  // $('#alert-modal-content').html('<p>Welcome!</p>')
+  // $('#alertModal').modal('show')
   store.user = data.user
 }
 
@@ -84,9 +84,9 @@ const signOutSuccess = function (data) {
   $('#sign-out').hide()
   $('#sign-in').show()
   $('#change-password').show()
-  $('#alert-modal-content').addClass('alert-success')
-  $('#alert-modal-content').html('<p>Come back again soon!</p>')
-  $('#alertModal').modal('show')
+  // $('#alert-modal-content').addClass('alert-success')
+  // $('#alert-modal-content').html('<p>Come back again soon!</p>')
+  // $('#alertModal').modal('show')
   store.user = null
 }
 
