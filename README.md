@@ -45,3 +45,11 @@ For problem solving, once I had exhausted my own mental library of options, I wo
 - As a user, I want to be able to add and update my forms
 - As a user, I want to be able to remove any form submission I may add in error
 - As a user, I want to be able to sign out of a session once I'm finished
+
+## Installation Instructions
+If you'd like to load this project from my GitHub to your own local device, you can:
+- Fork this GitHub Repository to your own GitHub account
+- Copy the repository link from your GitHub account
+- Navigate into a preferred folder in Terminal and run `clone <copied repository url>` on the command line
+- Run `npm install` on the command line to run any dependencies that may be associated
+- This should create a copy of the front-end project into your GitHub as well as on your local device
